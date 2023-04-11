@@ -1,1 +1,1 @@
-# afl-patch
+fix some bugs in afl-2.52 installed in ubuntu 20.04

@@ -1,0 +1,13 @@
+--- qemu-2.10.0-clean/linux-user/syscall.c	2020-03-12 18:47:47.898592169 +0100
++++ qemu-2.10.0/linux-user/syscall.c	2020-03-12 19:16:41.563074307 +0100
+@@ -81,3 +81,10 @@
+#endif
+
++ int stime(const time_t *t)
++ {
++ 	struct timeval tv;
++ 	tv.tv_sec = *t;
++ 	tv.tv_usec = 0;
++ 	return settimeofday(&tv, NULL);
++ }
+#define termios host_termios
